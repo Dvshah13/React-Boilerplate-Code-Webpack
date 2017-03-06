@@ -22,7 +22,7 @@ class Demo extends React.Component {
     doMessage(message,event){
         this.setState({message:message});
         var self = this;
-        axios.post(`https://slack.com/api/chat.postMessage?token=xoxp-149583067808-149583068192-150342085556-c7b575098803fc466a8d9905b4a4ace0&channel=C4EB439J9&text=${message}&pretty=1.json`)
+        axios.post(`https://slack.com/api/chat.postMessage?token=&channel=C4EB439J9&text=${message}&pretty=1.json`)
             .then(function(){
                 self.setState({
                     timestamp: Date.now(),
