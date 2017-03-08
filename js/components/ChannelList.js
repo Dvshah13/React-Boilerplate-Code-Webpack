@@ -1,4 +1,6 @@
-import React from 'react';
+import React, {Component} from 'react';
+import {bindActionCreators} from 'redux';
+import {connect} from 'react-redux';
 import axios from 'axios';
 
 export default class ChannelList extends React.Component {
@@ -11,7 +13,7 @@ export default class ChannelList extends React.Component {
   }
 
   componentDidMount() {
-    axios.get(`https://slack.com/api/channels.list?&pretty=1.json`)
+    axios.get(`https://slack.com/api/channels.list?token=xoxp-149583067808-149583068192-151447687795-a35815c5be35dbd2e99c32b7409de0c7&pretty=1`)
       .then(res => {
           console.log(res);
         const channels = res.data.channels;
@@ -33,4 +35,10 @@ export default class ChannelList extends React.Component {
       </div>
     );
   }
+}
+
+function mapStateToProps(state) {
+    return (
+        channels: state.channels
+    );
 }

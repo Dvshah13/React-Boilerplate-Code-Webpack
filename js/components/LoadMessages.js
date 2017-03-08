@@ -11,7 +11,7 @@ export default class LoadMessages extends React.Component {
   }
 
   componentDidMount() {
-    axios.post(`https://slack.com/api/channels.history?token=&channel=C4EB439J9&pretty=1.json`)
+    axios.post(`https://slack.com/api/channels.history?token=xoxp-149583067808-149583068192-151447687795-a35815c5be35dbd2e99c32b7409de0c7&channel=C4EB439J9&pretty=1.json`)
       .then(res => {
         const messages = res.data.messages;
         console.log("Channel array" + messages);
